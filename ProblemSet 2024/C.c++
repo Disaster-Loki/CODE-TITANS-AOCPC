@@ -1,6 +1,13 @@
+/*
+ *	Author:		Rafael Marcos
+ *	Creation:	26/10/2024
+ *	Last Modified:	29/10/2024
+ * */
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -44,11 +51,14 @@ void	get_palindromes(int a, int b, vector<string>& v, int index, string str)
 
 int	main(void)
 {
-	int	testcases;
-	int	a;
-	int	b;
+	int		testcases;
+	int		a;
+	int		b;
 	vector<string>	v;
+	stringstream	output;
 
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
 	cin >> testcases;
 	while (testcases--)
 	{
@@ -57,11 +67,12 @@ int	main(void)
 		get_palindromes(a, b, v, 0, string(a + b, '0'));
 		if (v.size())
 		{
-			cout << v[1] << endl;
+			output << v[1] << endl;
 			v.clear();
 		}
 		else
-			cout << -1 << endl;
+			output << -1 << endl;
 	}
+	cout << output.str();
 	return (0);
 }
