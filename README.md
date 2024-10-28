@@ -17,4 +17,4 @@ If you're a programming enthusiast and want to contribute, feel free to add your
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/CODE-TITANS-AOCPC.git
+   git clone https://github.com/Disaster-Loki/CODE-TITANS-AOCPC.git
