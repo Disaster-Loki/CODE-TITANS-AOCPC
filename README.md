@@ -11,6 +11,21 @@ In this repository, you'll find organized folders for the **ProblemSets** from t
 - **2023**: Challenges and solutions from the year 2023.
 - **2024**: Challenges and solutions from the year 2024.
 
+## 📝 Commit Format
+
+To keep a clean and structured commit history, use the following format when making commits:
+
+1. **Stage your changes**:
+   ```bash
+   git add .
+
+2. **Make a commit using this structure**e:
+   ```bash
+   git commit -m "Version X.X - [Short Description of the Change]"
+For example:
+   ```bash
+   git commit -m "Version 1.0 - Push Folders"
+
 ## 🛠️ How to Contribute
 
 If you're a programming enthusiast and want to contribute, feel free to add your solutions or new challenges! Here are some steps to get started:
