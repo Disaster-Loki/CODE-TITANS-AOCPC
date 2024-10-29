@@ -19,7 +19,7 @@ To keep a clean and structured commit history, use the following format when mak
    ```bash
    git add .
 
-2. **Make a commit using this structure**e:
+2. **Make a commit using this structure**:
    ```bash
    git commit -m "Version X.X - [Short Description of the Change]"
 
