@@ -49,7 +49,7 @@ void	get_palindromes(int a, int b, vector<string>& v, int index, string str)
 	}
 }
 
-int	main(void)
+int	main()
 {
 	int		testcases;
 	int		a;
