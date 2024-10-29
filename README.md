@@ -22,9 +22,6 @@ To keep a clean and structured commit history, use the following format when mak
 2. **Make a commit using this structure**e:
    ```bash
    git commit -m "Version X.X - [Short Description of the Change]"
-For example:
-   ```bash
-   git commit -m "Version 1.0 - Push Folders"
 
 ## 🛠️ How to Contribute
 
