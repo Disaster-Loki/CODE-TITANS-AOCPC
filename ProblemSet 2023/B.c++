@@ -1,30 +1,24 @@
 #include <iostream>
-#include <vector>
-//#include <bits/stdc++.h>
+#include <sstream>
+#include <algorithm>
+
 using namespace std;
 
-int main()
+int ft_gcd(int a, int b)
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int N, count = 0; cin >> N;
-    vector<int> array(N);
-    for (int i = 0; i < N; i++)
-        cin >> array[i];
-    for (int i = 0; i < N; i++)
-    {
-        while (array[i] > 0)
-        {
-            --array[i];
-            ++count;
-        }
-        while (array[i] < 0)
-        {
-            ++array[i];  
-            
-            ++count;
-        }
+    if (b == 0)
+        return (a);
+    return (ft_gcd(b, a % b));
+}
+
+int main() {
+    stringstream output;
+    int t; cin >> t;
+    while (t--) {
+        int a, b;
+        cin >> a >> b;
+        output << ((ft_gcd(a, b) > 1) ? "YES":"NO") << endl;
     }
-    cout << count << endl;
-    return (0);
+    cout << output.str();
+    return 0;
 }
