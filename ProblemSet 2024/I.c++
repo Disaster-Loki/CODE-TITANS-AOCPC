@@ -10,64 +10,61 @@
 #                                                                              #
 # *****************************************************************************/
 
-// Apenas um teste
 #include <iostream>
+#include <vector>
+#include <set>
+#include <sstream>
 using namespace std;
 
-struct Node
-{
-    int value;
-    Node *left;
-    Node *right;
+const int MAXN = 1e6 + 5;
 
-    Node(int val): value(val), left(nullptr), right(nullptr) {}
-};
+vector<int> tree[MAXN]; // Lista de adjacências para a árvore
+int values[MAXN];       // Valores escritos nos nós (permutação)
 
-Node *insert(Node *root, int value) 
-{
-    if (root == nullptr) {
-        cout << "Inserting " << value << endl;  // Debug
-        return new Node(value);
+// Função de coleta dos valores na subárvore usando DFS
+void collectValuesDFS(int node, set<int> &Values) {
+    Values.insert(values[node]);
+    for (int child : tree[node]) {
+        collectValuesDFS(child, Values);
     }
-    if (value < root->value) {
-        cout << "Going left: " << value << " < " << root->value << endl;  // Debug
-        root->left = insert(root->left, value);
-    } else {
-        cout << "Going right: " << value << " >= " << root->value << endl;  // Debug
-        root->right = insert(root->right, value);
-    }
-    return root;
 }
 
-void inorder(Node *root)
-{
-    if (root == nullptr)
-        return;
-    inorder(root->left);
-    cout << root->value << " ";
-    inorder(root->right);
+// Calcula o MEX (Menor Número Positivo Ausente)
+int MEX(const set<int> &Values) {
+    int mex = 1;
+    while (Values.find(mex) != Values.end())
+        mex++;
+    return mex;
 }
 
-int main()
-{
+int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+    stringstream output;
+    int n, q;
+    cin >> n >> q;
 
-    Node *root = nullptr;
-
-    // Inserindo valores na árvore binária de busca
-    root = insert(root, 10);
-    root = insert(root, 5);
-    root = insert(root, 15);
-    root = insert(root, 3);
-    root = insert(root, 7);
-    root = insert(root, 12);
-    root = insert(root, 18);
-
-    cout << "Sorted tree: ";
-    inorder(root);
-    cout << endl;
-
+    for (int i = 1; i <= n; i++)
+        cin >> values[i];
+    for (int i = 0; i < n - 1; i++) {
+        int u, v; cin >> u >> v;
+        tree[u].push_back(v);
+    }
+    while (q--) {
+        int op;
+        cin >> op;
+        if (op == 1) {
+            int l, r;
+            cin >> l >> r;
+            swap(values[l], values[r]);
+        } else if (op == 2) {
+            int u;
+            cin >> u;
+            set<int> Values;
+            collectValuesDFS(u, Values);
+            output << MEX(Values) << endl;
+        }
+    }
+    cout << output.str();
     return 0;
 }
-
