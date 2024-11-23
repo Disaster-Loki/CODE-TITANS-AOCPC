@@ -10,7 +10,7 @@
 #                                                                              #
 # *****************************************************************************/
 
-// Amin's Campagn
+// Amin's Campaign
 #include <iostream>
 #include <algorithm>
 #include <sstream>
