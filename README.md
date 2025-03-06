@@ -1,6 +1,6 @@
 # 🦸‍♂️ CODE-TITANS - AOCPC 🚀
 
-Welcome to the **CODE-TITANS** repository! Here, we practice solving problems from the AOCPC (Algorithms and Competitive Programming).
+Welcome to the **CODE-TITANS** repository! Here, we practice solving problems from the AOCPC (Algorithms and Competitive Programming) and everything about competitive programming.
 
 ## 📂 Repository Structure
 
